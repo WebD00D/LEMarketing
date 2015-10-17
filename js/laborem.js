@@ -2,7 +2,9 @@ $(document).ready(function(){
 
     //initilizers
     $(".button-collapse").sideNav();
-    $('#fullpage').fullpage();
+    $('#fullpage').fullpage({
+       loopBottom: true
+    });
 
   //  $(".welcometext").typed({
 
@@ -11,12 +13,12 @@ $(document).ready(function(){
       //  typeSpeed: 0,
 
         //showCursor: false
-    //}); 
+    //});
 
 
+    $(".LEServices").click(function(){
 
-
-
+    })
 
 
 

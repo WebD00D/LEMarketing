@@ -7,9 +7,14 @@ html, body { height: 100%; width: 100%; margin: 0; }
 }
 
 .LEActive{
-  color:#9A12B3
+
+  font-family:'clavo';font-weight:400;font-style:regular;color:#9A12B3;
 }
 
 .LEText{
-    font-family:'clavo';font-weight:400;font-style:regular;
+    font-family:'clavo';font-weight:400;font-style:regular;color:black;
+}
+
+.LEText:hover{
+  color:#FAD46B;
 }
