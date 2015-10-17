@@ -4,14 +4,20 @@ $(document).ready(function(){
     $(".button-collapse").sideNav();
     $('#fullpage').fullpage();
 
-    $(".welcometext").typed({
+  //  $(".welcometext").typed({
 
-        contentType: 'html',
-        strings: ["Some text here", "followed by some more text"],
-        typeSpeed: 0,
+    //    contentType: 'html',
+      //  strings: ["Some text here", "followed by some more text", "<a href='#'>Click Me!</a>"],
+      //  typeSpeed: 0,
 
-        showCursor: false
-    });
+        //showCursor: false
+    //}); 
+
+
+
+
+
+
 
 
 })
