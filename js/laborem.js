@@ -16,7 +16,17 @@ $(document).ready(function(){
     //});
 
 
-    $(".LEServices").click(function(){
+    $("#brandstrategyContainer").mouseover(function(){
+      $("#brandstrategy").css({ 'background-color': 'white' });
+    $("#brandstrategy").css('background-image', 'none');
+    $("#brandstrategytext").removeClass("hide");
+    $("#brandstrategyHeadline").css("color","black");
+
+    })
+    $("#brandstrategyContainer").mouseout(function(){
+      $("#brandstrategy").css({ 'background-image': 'URL(https://www.mojandroid.sk/wp-content/uploads/2015/01/Black-And-White-Chess-Board-Android-Wallpaper.jpg)' });
+    $("#brandstrategytext").addClass("hide");
+    $("#brandstrategyHeadline").css("color","white");
 
     })
 
