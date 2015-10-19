@@ -19,4 +19,46 @@ html, body { height: 100%; width: 100%; margin: 0; }
   color:#FAD46B;
 }
 
-ß
+.LEButton{
+  color:black;
+  background-color:#EEEEEE;
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left:35px;
+  padding-right:35px;
+  font-size: 20px;
+
+}
+.LEButton:hover{
+  color:white;
+  background-color:black;
+}
+
+.tiles{
+  height:55%;
+}
+.tiles2{
+  height:45%;
+}
+
+@media only screen and (max-width : 600px) {
+
+.tiles{
+  height: 25%;
+}
+.tiles2{
+  height: 25%;
+}
+
+}
+
+@media only screen and (max-width : 992px) {
+
+  .tiles{
+    height: 25%;
+  }
+  .tiles2{
+    height: 25%;
+  }
+
+}
