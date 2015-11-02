@@ -92,6 +92,12 @@ $(document).ready(function(){
       $("#projectBudget").text("$" +$(this).val());
     })
 
+    $(".materialboxed").mouseover(function(){
+      $(this).addClass("z-depth-5");
+    })
+    $(".materialboxed").mouseout(function(){
+      $(this).removeClass("z-depth-5");
+    })
 
 
     $("#closeme").click(function(){
