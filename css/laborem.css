@@ -1,9 +1,45 @@
 
-html, body { height: 100%; width: 100%; margin: 0; }
- div { height: 100%; width: 100%; }
+
 
 .fullheight {
   height: 100vh;
+}
+
+.headlinks{
+  font-family: 'acumin-pro';
+  font-weight:100;
+  font-style:normal;
+
+}
+
+
+.servicetiles{
+
+  height:50%;
+}
+
+#closeme:hover{
+  color:#ED4877;
+}
+
+.theHr{
+  /*D29D00*/
+  background-color:#ED4877;
+  border:0px;
+  height:2px;
+  margin-left:0%;
+  margin-right:40%
+}
+.theHrLEFT{
+  background-color:#ED4877;
+  border:0px;
+  height:2px;
+  margin-left:0%;
+  margin-right:75%
+}
+
+.iconpadding{
+  padding:5px;
 }
 
 .LEActive{
@@ -20,18 +56,81 @@ html, body { height: 100%; width: 100%; margin: 0; }
 }
 
 .LEButton{
-  color:black;
-  background-color:#EEEEEE;
+  color:white;
+  background-color:transparent;
+  border:2px solid white;
+  border-radius: 3px;
   padding-top:10px;
   padding-bottom:10px;
   padding-left:35px;
   padding-right:35px;
   font-size: 20px;
-
+  font-family: 'acumin-pro';
+  font-weight:100;
+  font-style:normal;
 }
 .LEButton:hover{
   color:white;
   background-color:black;
+}
+
+
+.headlinks:hover{
+  color:#ED4877;
+}
+
+.LEButtonPink{
+  color:#ED4877;
+  background-color:transparent;
+  border:2px solid #ED4877;
+  border-radius: 35px;
+  padding-top:10px;
+  padding-bottom:11px;
+  padding-left:35px;
+  padding-right:35px;
+  font-size: 20px;
+  font-family: 'acumin-pro';
+  font-weight:100;
+  font-style:normal;
+}
+.LEButtonPink:hover{
+  color:black;
+  border-color:black;
+}
+
+.LEButtonPink2{
+  color:white;
+  background-color:transparent;
+  border:2px solid white;
+  border-radius: 35px;
+  padding-top:10px;
+  padding-bottom:11px;
+  padding-left:35px;
+  padding-right:35px;
+  font-size: 20px;
+  font-family: 'acumin-pro';
+  font-weight:100;
+  font-style:normal;
+}
+.LEButtonPink2:hover{
+  color:white;
+  border-color:white;
+  background-color: rgba(01,01,01,0.5);
+}
+
+.sectiontitles:hover{
+    color:#ED4877;
+}
+
+.sectiontitles{
+  color:#a1a5ad;
+}
+
+.quote{
+  color:white;
+}
+.quote:hover{
+  color:#ED4877;
 }
 
 .tiles{
@@ -40,6 +139,16 @@ html, body { height: 100%; width: 100%; margin: 0; }
 .tiles2{
   height:45%;
 }
+
+#inquirebar{
+  border:2px solid white;padding:8px;padding-bottom:8px;padding-left:20px;padding-right:20px;border-radius:20px;
+}
+
+#inquirebar:hover{
+  border:2px solid #ED4877;padding:7px;padding-bottom:8px;padding-left:20px;padding-right:20px;border-radius:20px;
+  background-color: #ED4877; color:white
+}
+
 
 @media only screen and (max-width : 600px) {
 

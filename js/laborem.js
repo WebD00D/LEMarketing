@@ -5,16 +5,15 @@ $(document).ready(function(){
     //initilizers
     $(".button-collapse").sideNav();
     $('select').material_select();
+    $('.parallax').parallax();
 
-    $('#fullpage').fullpage({
-       loopBottom: true
-
-    });
     $('.your-class').slick({
       autoplay: true,
       arrows:false
 
   });
+
+  $("#projectBudget").text("$" + $("#test5").val());
 
     hideServiceText();
     hideClientText();
@@ -24,7 +23,9 @@ $(document).ready(function(){
       $(".your-class").show();
       $("#closeit").hide();
       $("#closeit2").hide();
+      $("#closeme").hide();
       $(".clientheadliner").text("Collaboration Is Key");
+
   //  $(".welcometext").typed({
 
     //    contentType: 'html',
@@ -35,48 +36,129 @@ $(document).ready(function(){
     //});
 
     function hideServiceText(){
-      $(".maintext").hide();
-      $(".thebrandbooktext").hide();
-      $(".brandstrategytext").hide();
-      $(".webexperiencestext").hide();
-      $(".brandidentitytext").hide();
+      $("#brandidentitytext").hide();
+      $("#brandanalysistext").hide();
+      $("#branduitext").hide();
+      $("#brandstrategytext").hide();
     }
 
-    $("#closeit").mouseover(function(){
-      $(this).css("cursor","pointer");
-    })
-    $("#closeit2").mouseover(function(){
+    $("#closeme").mouseover(function(){
       $(this).css("cursor","pointer");
     })
 
-    $(".LEButton").mouseover(function(){
-        $(this).css("cursor","pointer");
+
+    $(".LEButtonPink").mouseover(function(){
+      $(this).css("cursor","pointer");
+      $(this).addClass('animated bounce').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+      function(){
+        $(this).removeClass('animated bounce');
+      });
     })
 
-    $("#closeit").click(function(){
+    $(".LEIcons").mouseover(function(){
+      $(this).css("cursor","pointer");
+      $(this).addClass('animated tada').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+      function(){
+        $(this).removeClass('animated tada');
+      });
+    })
+
+    $(".quote").mouseover(function(){
+      $(this).css("cursor","pointer");
+      $(this).addClass('animated pulse').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+      function(){
+        $(this).removeClass('animated pulse');
+      });
+    })
+
+    $("#brandbookquestion").click(function(e){
+      e.preventDefault();
+      swal({
+        title: "The Brand Book",
+        text: "<p style='text-align:center'>Starting January 2016, we will be offering a product called the Brand Book. The book will serve as an identity guideline for your company, outlining the following: <Br> <ol style='text-align:left'><li>Overview of brand, including history, vision and personality</li><li>Logo specifications and examples of usage</li><li>Typography palette</li><li>Color palette</li></ol></p>",
+        html: true,
+        confirmButtonText: "Cool",
+        confirmButtonColor: "#000000"
+      })
+    })
+
+
+    $("#btnSubmitInquiry").click(function(){
+      var theVal = $("#test5").val();
+      alert(theVal);
+    })
+
+    $("#test5").change(function(){
+      $("#projectBudget").text("$" +$(this).val());
+    })
+
+
+
+    $("#closeme").click(function(){
     hideServiceText();
     $(".maintext").show();
-    $(".serviceheadliner").text("A Tailored Fit");
-      $("#closeit").hide();
+    $("#servicetext").show();
+    $("#ourPassionIs").text("Story Telling");
+    $("#closeme").hide();
 
     })
 
-    $("#closeit2").click(function(){
-      $('.your-class').slick('slickPlay');
-    hideClientText();
-    $(".mainclienttext").show();
-    $(".clientheadliner").text("Collaboration Is Key");
-      $("#closeit2").hide();
-        $(".your-class").show();
+$(".headlinks").click(function(e){
+  e.preventDefault();
+  goToByScroll($(this).attr('data-page'));
+})
 
-    })
+$("#GoToPhase2").click(function(e){
+    e.preventDefault();
+    goToByScroll("Phase2");
+})
+$("#GoToPhase3").click(function(e){
+    e.preventDefault();
+    goToByScroll("Phase3");
+})
+$("#GoToInquire").click(function(e){
+    e.preventDefault();
+    goToByScroll("inquire");
+})
 
-    $(".brandbook").mouseover(function(){
+$("#ShareYours").click(function(e){
+    e.preventDefault();
+    goToByScroll("inquire");
+})
+
+$("#learnmore").click(function(e){
+  e.preventDefault();
+  goToByScroll("ourApproach");
+})
+
+
+function goToByScroll(id){
+       $('html,body').animate({
+       scrollTop: $("#"+id).offset().top},
+       'slow');
+}
+
+
+
+    $(".brand").mouseover(function(){
       $(this).css("cursor","pointer");
+      $(this).addClass("z-depth-3");
     })
-    $(".brandstategy").mouseover(function(){
+    $(".brand").mouseout(function(){
       $(this).css("cursor","pointer");
+      $(this).removeClass("z-depth-3");
     })
+
+    $(".brand").click(function(){
+      hideServiceText();
+      $("#ourPassionIs").text($(this).attr('data-headline'));
+      $("#closeme").show();
+      $("#servicetext").hide();
+      var textid = $(this).attr('data-text');
+      $("#"+textid).show();
+    })
+
+
     $(".webexperience").mouseover(function(){
       $(this).css("cursor","pointer");
     })
@@ -99,27 +181,27 @@ $(document).ready(function(){
 
     $(".brewrocket").click(function(){
       hideClientText();
-      unslickit();
+      //unslickit();
       $("#closeit2").show();
       $(".clientheadliner").text("Brewrocket");
       $(".brewrockettext").show();
     })
     $(".bombshell").click(function(){
-      unslickit();
+      //unslickit();
         hideClientText();
         $("#closeit2").show();
         $(".clientheadliner").text("Bombshell Salon");
         $(".bombshelltext").show();
     })
     $(".orinoco").click(function(){
-      unslickit();
+    //  unslickit();
         hideClientText();
         $("#closeit2").show();
         $(".clientheadliner").text("Orinoco");
         $(".orinocotext").show();
     })
     $(".winstons").click(function(){
-      unslickit();
+    //  unslickit();
       hideClientText();
       $(".winstonstext").show();
       $("#closeit2").show();
