@@ -83,9 +83,50 @@ $(document).ready(function(){
     })
 
 
-    $("#btnSubmitInquiry").click(function(){
-      var theVal = $("#test5").val();
-      alert(theVal);
+    $("#btnSubmitInquiry").click(function(e){
+
+      e.preventDefault();
+
+      var name = $("#name").val();
+      var email = $("#email").val();
+      var deadline = $("#deadline").val();
+      var deadlineReason = $("#deadlineReason").val();
+      var projectBudget = $("#test5").val();
+
+      //build inquiry details list
+      var InquiryDetailHTML = '';
+
+      if ($("#webapp").is(":checked")){
+        InquiryDetailHTML += ' Website / Application  - '
+      }
+      if ($("#identiy").is(":checked")){
+        InquiryDetailHTML += ' Brand Identity - '
+      }
+      if ($("#print").is(":checked")){
+        InquiryDetailHTML += ' Print / Ad Design - '
+      }
+      if ($("#consult").is(":checked")){
+        InquiryDetailHTML += ' Consultation - '
+      }
+      if ($("#workshop").is(":checked")){
+        InquiryDetailHTML += ' Workshop / Speaking - '
+      }
+      if ($("#brandbook").is(":checked")){
+        InquiryDetailHTML += ' BrandBook - '
+      }
+
+      alert(InquiryDetailHTML);
+
+
+
+
+
+
+
+
+
+
+
     })
 
     $("#test5").change(function(){
