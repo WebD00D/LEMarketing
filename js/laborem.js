@@ -75,7 +75,7 @@ $(document).ready(function(){
       e.preventDefault();
       swal({
         title: "The Brand Book",
-        text: "<p style='text-align:center'>Starting January 2016, we will be offering a product called the Brand Book. The book will serve as an identity guideline for your company, outlining the following: <Br> <ol style='text-align:left'><li>Overview of brand, including history, vision and personality</li><li>Logo specifications and examples of usage</li><li>Typography palette</li><li>Color palette</li></ol></p>",
+        text: "<p style='text-align:justify'>Starting January 2016, we will be offering a product called the Brand Book. The book will serve as an identity guideline for your company, outlining the following: <Br> <ol style='text-align:left'><li>Overview of brand, including history, vision and personality</li><li>Logo specifications and examples of usage</li><li>Typography palette</li><li>Color palette</li></ol></p>",
         html: true,
         confirmButtonText: "Cool",
         confirmButtonColor: "#000000"
@@ -89,6 +89,7 @@ $(document).ready(function(){
 
       var name = $("#name").val();
       var email = $("#email").val();
+      var phone = $("#phone").val();
       var deadline = $("#deadline").val();
       var deadlineReason = $("#deadlineReason").val();
       var projectBudget = $("#test5").val();
@@ -115,13 +116,25 @@ $(document).ready(function(){
         InquiryDetailHTML += ' BrandBook - '
       }
 
-      alert(InquiryDetailHTML);
+     var textToSend = "Inquiry Email\n" +
+		"From: "+ name + "\n"+
+		"Email: "+ email + "\n"+
+		"Phone: "+ phone + "\n\n"+
+		"Deadline: "+ deadline + "\n"+
+    "Deadline Explanation: "+ deadlineReason + "\n"+
+    "Project Budget: $"+ projectBudget + "\n"+
+		"Looking For:\n" + InquiryDetailHTML;
 
+    Parse.Cloud.run('sendMail', { msg: textToSend }, {
+      success: function(result) {
+            swal({   title: "Message Sent!",   text: "We'll be in touch with you soon!" ,   type: "success", confirmButtonText:"Okay",confirmButtonColor: "#34495e"});
 
-
-
-
-
+      },
+      error: function(error) {
+        console.log(error);
+        swal({   title: "Failed to Send!",   text: "Hmm something's not right." ,   type: "error",   confirmButtonText: "OK",confirmButtonColor: "#34495e" });
+      }
+    });
 
 
 
