@@ -7,11 +7,14 @@ $(document).ready(function(){
     $('select').material_select();
     $('.parallax').parallax();
 
-    $('.your-class').slick({
+    $('.slickClass').slick({
+      arrows:false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
       autoplay: true,
-      arrows:false
-
-  });
+      autoplaySpeed: 2000,
+      draggable:true
+    }); // end slick
 
   $("#projectBudget").text("$" + $("#test5").val());
 
