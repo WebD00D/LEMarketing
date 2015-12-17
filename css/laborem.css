@@ -1,4 +1,6 @@
-
+#headertext{
+  margin-top:10%;
+}
 
 
 .fullheight {
@@ -159,6 +161,13 @@
   height: 25%;
 }
 
+}
+
+
+@media screen and (min-width:1920px) {
+  #headertext{
+    margin-top:23.5%;
+  }
 }
 
 @media only screen and (max-width : 992px) {

@@ -324,6 +324,14 @@ function goToByScroll(id){
       sendItOut(message);
     })
 
+    $(".portfolioimg").mouseover(function(){
+      $(this).addClass('z-depth-3');
+    })
+    $(".portfolioimg").mouseout(function(){
+      $(this).removeClass('z-depth-3');
+    })
+
+
 
     function sendItOut(textToSend){
       Parse.Cloud.run('sendMail', { msg: textToSend }, {
